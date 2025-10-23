@@ -1,0 +1,13 @@
+body {
+  background-color: var(--p-zinc-100);
+}
+
+.container-card {
+  background-color: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  padding: 16px;
+  width: calc(100vw - 400px);
+  min-height: 90vh;
+  flex: 1;
+}
