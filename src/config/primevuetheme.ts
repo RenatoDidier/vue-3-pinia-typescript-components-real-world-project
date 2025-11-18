@@ -23,6 +23,9 @@ const Noir = definePreset(Aura, preset)
 const themeConfig = {
   theme: {
     preset: Noir,
+    options: {
+      darkModeSelector: false,
+    },
   },
 }
 export default themeConfig

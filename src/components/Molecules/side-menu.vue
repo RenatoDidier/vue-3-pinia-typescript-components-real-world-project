@@ -19,14 +19,14 @@ const items = ref<MenuItem[]>([
     },
   },
   {
-    label: 'Research',
+    label: 'Search',
     icon: 'pi pi-book',
     items: [
       {
         label: 'Admin',
         icon: 'pi pi-sliders-v',
         command: () => {
-          router.push('/researches')
+          router.push('/search')
         },
       },
     ],

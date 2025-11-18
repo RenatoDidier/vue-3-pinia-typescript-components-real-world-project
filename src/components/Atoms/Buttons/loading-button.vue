@@ -16,39 +16,36 @@ type Size = 'small' | 'large' | undefined
 
 const props = withDefaults(
   defineProps<{
-    label: string
-    to: string
-    target?: string
-    icon?: string
-    loading?: boolean
-    colorButton?: Severity
+    label?: string | undefined
+    icon?: string | undefined
+    loading?: boolean | undefined
+    colorButton?: Severity | undefined
     disabled?: boolean
-    size?: Size
-    variant?: string
+    size?: Size | undefined
   }>(),
   {
-    target: '_blank',
+    label: undefined,
     icon: undefined,
     loading: false,
     colorButton: undefined,
     disabled: false,
     size: undefined,
-    variant: undefined,
   }
 )
+
+defineEmits(['handleButtonClick'])
 </script>
 
 <template>
   <Button
-    as="a"
-    style="text-decoration: none"
+    type="button"
     :label="props.label"
-    :href="props.to"
-    :target="props.target"
     :icon="props.icon"
+    :loading="props.loading"
     :severity="props.colorButton"
     :disabled="props.disabled"
     :size="props.size"
+    @click="$emit('handleButtonClick')"
   />
 </template>
 
