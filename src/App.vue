@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import SideMenu from '@/components/Molecules/side-menu.vue'
+import Toast from 'primevue/toast'
 </script>
 
 <template>

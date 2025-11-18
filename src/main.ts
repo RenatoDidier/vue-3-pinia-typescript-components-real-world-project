@@ -8,6 +8,7 @@ import PrimeVue from 'primevue/config'
 import ToastService from 'primevue/toastservice'
 
 import 'primeicons/primeicons.css'
+import 'primeflex/primeflex.css'
 import '@/assets/style.css'
 
 import themeConfig from '@/config/primevuetheme'
