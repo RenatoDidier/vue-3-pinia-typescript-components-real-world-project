@@ -10,7 +10,7 @@ import type { EnumerationDto } from '@/utils/search'
 type UUID = string
 
 interface OptionsQuestion {
-  idQuestion?: UUID
+  questionId?: UUID
   justifyTextBox: boolean
   selectMoreThanOneOption: boolean
   existsRightAnswer: boolean
@@ -58,7 +58,7 @@ export interface QuestionVision {
   standard: boolean
 }
 export interface QuestionForm {
-  idQuestion?: UUID
+  questionId?: UUID
   order: SelectFormProps<number>
   typeQuestion: SelectFormProps<number>
   visions: MultiSelectFormProps<QuestionVision>
@@ -81,7 +81,7 @@ export interface QuestionForm {
   alternatives: InputTextFormProps[]
 }
 export interface QuestionFormResponse {
-  idQuestion?: UUID
+  questionId?: UUID
   questionTitle: string
   alternativeWeight?: number
   mandatoryQuestion: number

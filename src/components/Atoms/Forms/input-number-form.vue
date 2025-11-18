@@ -34,7 +34,7 @@ const modelValueComputed = computed({
       fluid
     />
     <Message v-if="props.required && !props.isValid" size="small" severity="error" variant="simple">
-      Este campo é obrigatório
+      This field is required
     </Message>
   </div>
 </template>

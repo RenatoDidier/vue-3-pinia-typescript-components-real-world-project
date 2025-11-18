@@ -95,7 +95,7 @@ export const useSearchStore = defineStore('search', {
         }
 
         const questionPayload: QuestionFormResponse = {
-          idQuestion: question.idQuestion,
+          questionId: question.questionId,
           questionTitle: question.question.modelValue!,
           order: question.order.modelValue!,
           typeQuestion: {
@@ -111,7 +111,7 @@ export const useSearchStore = defineStore('search', {
             return visao.value
           }),
           questionOptions: {
-            idQuestion: question.idQuestion,
+            questionId: question.questionId,
             textForLowestGrade: question.textForLowestGrade.modelValue!,
             textForHighestGrade: question.textForHighestGrade.modelValue!,
             valueForLowestGrade: question.valueForLowestGrade.modelValue!,
@@ -316,7 +316,7 @@ export const useSearchStore = defineStore('search', {
       request.questions.forEach((question: QuestionFormResponse) => {
         const questionFromBack: QuestionForm = this.generateNewQuestionForm()
 
-        questionFromBack.idQuestion = question.idQuestion
+        questionFromBack.questionId = question.questionId
         questionFromBack.order.modelValue = question.order
         questionFromBack.typeQuestion.modelValue = question.typeQuestion.id
         questionFromBack.question.modelValue = question.questionTitle

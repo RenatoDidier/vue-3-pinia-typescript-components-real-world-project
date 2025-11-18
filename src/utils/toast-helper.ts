@@ -24,12 +24,12 @@ export function useNotify(defaults?: Partial<NotifyOpts>) {
   return {
     showToast,
     success: (opts: NotifyOpts | string) =>
-      showToast('success', typeof opts === 'string' ? { title: 'Sucesso', message: opts } : opts),
+      showToast('success', typeof opts === 'string' ? { title: 'Success', message: opts } : opts),
     info: (opts: NotifyOpts | string) =>
-      showToast('info', typeof opts === 'string' ? { title: 'Atenção', message: opts } : opts),
+      showToast('info', typeof opts === 'string' ? { title: 'Attention', message: opts } : opts),
     warn: (opts: NotifyOpts | string) =>
-      showToast('warn', typeof opts === 'string' ? { title: 'Atenção', message: opts } : opts),
+      showToast('warn', typeof opts === 'string' ? { title: 'Attention', message: opts } : opts),
     error: (opts: NotifyOpts | string) =>
-      showToast('error', typeof opts === 'string' ? { title: 'Erro', message: opts } : opts),
+      showToast('error', typeof opts === 'string' ? { title: 'Error', message: opts } : opts),
   }
 }

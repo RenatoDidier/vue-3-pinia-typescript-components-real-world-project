@@ -208,7 +208,7 @@ watch(
                 :options="question.typeQuestion.options"
                 :option-value="true"
                 :num-cols="3"
-                :disabled="question.idQuestion !== undefined"
+                :disabled="question.questionId !== undefined"
               />
 
               <section class="flex justify-content-center align-items-center ml-auto">

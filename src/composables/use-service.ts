@@ -5,16 +5,11 @@ import type { AxiosRequestConfig, AxiosResponse } from 'axios'
 
 type HttpMethod = 'get' | 'post' | 'put' | 'delete'
 
-/**
- * Hook de serviço com TS, abort via AbortController e genéricos.
- * TData controla o tipo do `data.value` (última resposta).
- */
 export function useService<TData = unknown>() {
   const loading = ref(false)
   const error = ref<AxiosError | Error | null>(null)
   const data = ref<TData | null>(null)
 
-  // Tipagem segura do env; ajuste o seu env.d.ts se quiser (ver nota no final)
   const apiKey = import.meta.env.VITE_API_KEY as string | undefined
 
   let abortController: AbortController | null = null
@@ -29,7 +24,6 @@ export function useService<TData = unknown>() {
     error.value = null
     data.value = null
 
-    // Cancela requisição anterior pendente
     abortController?.abort()
     abortController = new AbortController()
 
@@ -46,16 +40,12 @@ export function useService<TData = unknown>() {
         ...config,
       })
 
-      // Guarda apenas o "data" no ref (tipado)
       data.value = response.data as unknown as TData
       return response
     } catch (err) {
-      // Cancelamento (não marca erro e não lança)
       if (err instanceof CanceledError || axios.isCancel(err)) {
-        // opcional: console.debug('Request cancelada')
         return undefined
       }
-      // Erro real
       error.value = err as AxiosError
       throw err
     } finally {
@@ -63,7 +53,6 @@ export function useService<TData = unknown>() {
     }
   }
 
-  // Helpers com genéricos
   const get = <TResp = TData>(url: string, config?: AxiosRequestConfig) =>
     request<TResp>('get', url, undefined as never, config)
 

@@ -8,7 +8,7 @@ const error = ref<string>('')
 
 function handleSubmitForm() {
   if (!value.value.trim()) {
-    error.value = 'Este campo é obrigatório'
+    error.value = 'This field is required'
     return
   }
 }
